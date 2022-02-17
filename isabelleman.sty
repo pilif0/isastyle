@@ -1,0 +1,36 @@
+% Some useful definitions taken from Isabelle manuals
+
+% === From Doc/iman.sty
+% Meta-logical connectives
+\let\Forall=\bigwedge
+\let\Imp=\Longrightarrow
+\let\To=\Rightarrow
+\newcommand{\PROP}{\mathop{\mathrm{PROP}}}
+%\newcommand{\Var}[1]{{?\!#1}}
+\newcommand{\Var}[1]{{?#1}} % CHANGED: I find no gap doesn't work with variables starting e.g. with "l"
+\newcommand{\All}[1]{\Forall#1.}  %quantification
+
+% Standard logical symbols
+\let\turn=\vdash
+\let\conj=\wedge
+\let\disj=\vee
+\let\imp=\rightarrow
+\let\bimp=\leftrightarrow
+\newcommand\all[1]{\forall#1.}  %quantification
+\newcommand\ex[1]{\exists#1.}
+
+\newcommand{\lparr}{\mathopen{(\!|}}
+\newcommand{\rparr}{\mathclose{|\!)}}
+\newcommand{\ty}{\mathrel{::}}
+
+\newcommand\lbrakk{\mathopen{[\![}}
+\newcommand\rbrakk{\mathclose{]\!]}}
+
+\let\int=\cap
+\let\un=\cup
+\let\inter=\bigcap
+\let\union=\bigcup
+
+%macros to change the treatment of symbols
+\def\binperiod{\mathcode`\.="213A}   %treat . like a binary operator
+\def\binvert{\mathcode`\|="226A}     %treat | like a binary operator

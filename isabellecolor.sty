@@ -1,0 +1,55 @@
+% Macros for drawing Isabelle generated LaTeX with colours matching Isabelle/jEdit
+%
+% Assumes: isabelle, isabellesym, xcolor
+% Author: Filip Smola
+
+% === Colours:
+% Bound, free, fixed, type and schematic variables
+\definecolor{bound}{RGB}{0,128,0}
+\definecolor{free}{RGB}{0,0,255}
+\definecolor{fixed}{RGB}{255,140,0}
+\definecolor{tvar}{RGB}{160,32,240}
+\definecolor{schematic}{RGB}{0,0,155}
+% Inner quoted text
+\definecolor{quoted}{RGB}{255,0,204}
+% Top-level command (lemma, ...)
+\definecolor{command}{RGB}{0,102,153}
+% Outer Isar command (assumes, ...)
+\definecolor{Ocommand}{RGB}{0,153,102}
+% Inner Isar command (fix, ...)
+\definecolor{Icommand}{RGB}{0,153,255}
+% Quasi command ("and" in attribute, ...)
+\definecolor{Qcommand}{RGB}{153,102,255}
+% Background for bad commands (sorry, ...)
+\definecolor{bad}{RGB}{255,180,180}
+% Background shade for quoted text
+\definecolor{quoteshade}{RGB}{243,243,243}
+
+% === Variables:
+\newcommand{\isabv}[1]{{\color{bound} #1}}
+\newcommand{\isafv}[1]{{\color{free} #1}}
+\newcommand{\isatv}[1]{{\color{tvar} {\isacharprime}#1}}
+\newcommand{\isasv}[1]{{\color{schematic} #1}}
+\newcommand{\isafixed}[1]{{\color{fixed} #1}}
+
+% === Commands:
+\newcommand{\isacomm}[1]{{\color{command} \isacommand{#1}}}
+\newcommand{\isaOcomm}[1]{{\color{Ocommand} \isacommand{#1}}}
+\newcommand{\isaIcomm}[1]{{\color{Icommand} \isacommand{#1}}}
+\newcommand{\isaQcomm}[1]{{\color{Qcommand} \isacommand{#1}}}
+
+% === Misc Abbreviations:
+% Custom notation
+\newcommand{\isanotation}[1]{{\color{command} #1}}
+% Inner quotation:
+\newcommand{\isaIquote}[1]{{\color{quoted} #1}}
+\newcommand{\isastring}[1]{\isaIquote{''#1''}}
+\newcommand{\isaString}[1]{\isanotation{STR}\ \isastring{#1}}
+% Quote an expression:
+\newcommand{\isaquote}[1]{\colorbox{quoteshade}{{\isachardoublequoteopen}#1{\isachardoublequoteclose}}}
+% Surround an expression with brakks
+\newcommand{\isabrakk}[1]{{\isasymlbrakk}#1{\isasymrbrakk}}
+% Sorry
+\newcommand{\sorry}{\colorbox{bad}{\isacomm{sorry}}}
+% Apply
+\newcommand{\apply}{{\color{red} \isacommand{apply}}}
