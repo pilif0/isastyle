@@ -1,0 +1,33 @@
+% Uncoloured variant of my macros for drawing Isabelle with the same names
+%
+% Assumes: isabelle, isabellesym
+% Author: Filip Smola
+
+% === Variables:
+\newcommand{\isabv}[1]{{#1}}
+\newcommand{\isafv}[1]{{#1}}
+\newcommand{\isatv}[1]{{{\isacharprime}#1}}
+\newcommand{\isasv}[1]{{#1}}
+\newcommand{\isafixed}[1]{#1}
+
+% === Commands:
+\newcommand{\isacomm}[1]{\isacommand{#1}}
+\newcommand{\isaOcomm}[1]{\isacommand{#1}}
+\newcommand{\isaIcomm}[1]{\isacommand{#1}}
+\newcommand{\isaQcomm}[1]{\isacommand{#1}}
+
+% === Misc Abbreviations:
+% Custom notation
+\newcommand{\isanotation}[1]{#1}
+% Inner quotation:
+\newcommand{\isaIquote}[1]{#1}
+\newcommand{\isastring}[1]{\isaIquote{\isacharprime\isacharprime #1\isacharprime\isacharprime}}
+\newcommand{\isaString}[1]{STR\ \isastring{#1}}
+% Quote an expression:
+\newcommand{\isaquote}[1]{{\isachardoublequoteopen}#1{\isachardoublequoteclose}}
+% Surround an expression with brakks
+\newcommand{\isabrakk}[1]{{\isasymlbrakk}#1{\isasymrbrakk}}
+% Sorry
+\newcommand{\sorry}{\isacomm{sorry}}
+% Apply
+\newcommand{\apply}{\isacommand{apply}}
